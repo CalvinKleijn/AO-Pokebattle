@@ -1,14 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokébattle</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
 <?php
+	require 'Pokemon.php';
+	require 'EnergyType.php';
+	require 'Pikachu.php';
+	require 'Charmeleon.php';
 
-require 'Pokemon.php';
+	// Pikachu //
+	$pikachuName = new Pikachu();
+	$pikachuType = new EnergyType();
+	$pikachuHitpoints = new Pikachu();
+	$pikachuHealth = new Pikachu();
 
-$pikachu = new Pokemon('Pikachu', 100, 100);
-echo "<p>Name: $pikachu->name</p>";
-echo "<p>Hitpoints: $pikachu->hitpoints</p>";
-echo "<p>Health: $pikachu->health</p>"  . "<br>";
+	echo "Name: " . $pikachuName->getPickachuName() . "<br>";
+	echo "Type: " . $pikachuType->getPickachuType() . "<br>";
+	echo "Hitpoints: " . $pikachuHitpoints->getPickachuHitpoints() . "<br>";
+	echo "Health: " . $pikachuHealth->getPickachuHitpoints() . "<br>";
 
-$charmeleon = new Pokemon('Charmeleon', 100, 100);
-echo "<p>Name: $charmeleon->name</p>";
-echo "<p>Hitpoints: $charmeleon->hitpoints</p>";
-echo "<p>Health: $charmeleon->health</p>"  . "<br>";
+	// Breakpoint //
+	echo "<br>";
+
+	// Charmeleon //
+	$charmeleonName = new Charmeleon();
+	$charmeleonType = new EnergyType();
+	$charmeleonHitpoints = new Charmeleon();
+	$charmeleonHealth = new Charmeleon();
+
+	echo "Name: " . $charmeleonName->getCharmeleonName() . "<br>";
+	echo "Type: " . $charmeleonType->getCharmeleonType() . "<br>";
+	echo "Hitpoints: " . $charmeleonHitpoints->getCharmeleonHitpoints() . "<br>";
+	echo "Health: " . $charmeleonHealth->getCharmeleonHitpoints() . "<br>";
+?>
+</body>
+</html>
 
