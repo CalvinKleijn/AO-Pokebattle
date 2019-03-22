@@ -2,7 +2,7 @@
 
 class EnergyType extends Pokemon {
 
-	public $pikachuType = 'Lightning';
-	public $charmeleonType = 'Fire';
+	protected $pikachuType = 'Lightning';
+	protected $charmeleonType = 'Fire';
 	
 }
