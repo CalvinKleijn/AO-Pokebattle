@@ -2,7 +2,7 @@
 
 class Pikachu extends Pokemon {
 
-	public $pikachuName = "Pikachu";
-	public $pikachuHitpoints = 60;
+	protected $pikachuName = "Pikachu";
+	protected $pikachuHitpoints = 60;
 
 }
