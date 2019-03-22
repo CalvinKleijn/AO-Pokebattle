@@ -2,7 +2,7 @@
 
 class Charmeleon extends Pokemon {
 
-	public $charmeleonName = "Charmeleon";
-	public $charmeleonHitpoints = 60;
+	protected $charmeleonName = "Charmeleon";
+	protected $charmeleonHitpoints = 60;
 
 }
