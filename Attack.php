@@ -3,13 +3,13 @@
 class Attack extends Pokemon {
 
 	protected $pikachuNameAttackER = "Electric Ring";
-	protected $pikachuNameAttackPP = "Pika Punch";
 	protected $pikachuDamageAttackER = 50;
+	protected $pikachuNameAttackPP = "Pika Punch";
 	protected $pikachuDamageAttackPP = 20;
 
 	protected $charmeleonNameAttackHB = "Head Butt";
-	protected $charmeleonNameAttackF = "Flare";
 	protected $charmeleonDamageAttackHB = 10;
+	protected $charmeleonNameAttackF = "Flare";
 	protected $charmeleonDamageAttackF = 30;
 
 }
