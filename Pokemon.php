@@ -2,6 +2,7 @@
 
 class Pokemon {
 
+	//Pikachu//
 	public function getPikachuName() {
 		return $this->pikachuName;
 	}
@@ -26,6 +27,14 @@ class Pokemon {
 		return $this->pikachuMultiplier;
 	}
 
+	public function getPikachuResistanceType() {
+		return $this->pikachuResistanceType;
+	}
+
+	public function getPikachuResistanceValue() {
+		return $this->pikachuResistanceValue;
+	}
+
 	public function getPikachuNameAttackER() {
 		return $this->pikachuNameAttackER;
 	}
@@ -42,6 +51,11 @@ class Pokemon {
 		return $this->pikachuDamageAttackPP;
 	}
 
+
+
+
+
+	//Charmeleon//
 	public function getCharmeleonName() {
 		return $this->charmeleonName;
 	}
@@ -64,6 +78,14 @@ class Pokemon {
 
 	public function getCharmeleonMultiplier() {
 		return $this->charmeleonMultiplier;
+	}
+
+	public function getCharmeleonResistanceType() {
+		return $this->charmeleonResistanceType;
+	}
+
+	public function getCharmeleonResistanceValue() {
+		return $this->charmeleonResistanceValue;
 	}
 
 	public function getCharmeleonNameAttackHB() {
