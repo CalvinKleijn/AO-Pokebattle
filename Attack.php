@@ -1,15 +1,12 @@
-<?php 
+<?php
 
-class Attack extends Pokemon {
+class Attack {
 
-	protected $pikachuNameAttackER = "Electric Ring";
-	protected $pikachuDamageAttackER = 50;
-	protected $pikachuNameAttackPP = "Pika Punch";
-	protected $pikachuDamageAttackPP = 20;
+    public $name;
+    public $damage;
 
-	protected $charmeleonNameAttackHB = "Head Butt";
-	protected $charmeleonDamageAttackHB = 10;
-	protected $charmeleonNameAttackF = "Flare";
-	protected $charmeleonDamageAttackF = 30;
-
+    public function __construct($name, $damage){
+        $this->name = $name;
+        $this->damage = $damage;
+    }
 }

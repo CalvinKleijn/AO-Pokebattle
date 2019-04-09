@@ -1,11 +1,12 @@
 <?php
 
-class Resistance extends Pokemon {
+class Resistance {
 
-	protected $pikachuResistanceType = "Fighting";
-	protected $pikachuResistanceValue = 20;
-
-	protected $charmeleonResistanceType = "Lightning";
-	protected $charmeleonResistanceValue = 10;
-
+    public $type;
+    public $value;
+    
+    public function __construct($type, $value){
+        $this->type = $type;
+        $this->value = $value;
+    }
 }

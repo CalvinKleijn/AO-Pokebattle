@@ -2,105 +2,52 @@
 
 class Pokemon {
 
-	//Pikachu//
-	public function getPikachuName() {
-		return $this->pikachuName;
-	}
+	protected $name;
+	protected $type;
+	protected $health;
+    protected $hitpoints;
+	public $attacks;
+    protected $resistance;
+    protected $weakness;
 
-	public function getPikachuType() {
-		return $this->pikachuType;
-	}
+	public function __construct($name, $type, $health, $hitpoints, $attacks, $resistance, $weakness)
+    {
+        $this->name = $name; 
+        $this->type = $type;
+        $this->health = $health;
+        $this->hitpoints = $hitpoints;
+        $this->attacks = $attacks;
+        $this->resistance = $resistance;
+        $this->weakness = $weakness;
+    }
 
-	public function getPikachuHitpoints() {
-		return $this->pikachuHitpoints;
-	}
+    public function getName()
+    {
+    	return $this->name;
+    }
 
-	public function getPikachuHealth() {
-		return $this->pikachuHitpoints;
-	}
+    public function getType()
+    {
+    	return $this->type->name;
+    }
 
-	public function getPikachuWeakness() {
-		return $this->pikachuWeaknessType;
-	}
+    public function getHealth()
+    {
+    	return $this->health;
+    }
 
-	public function getPikachuMultiplier() {
-		return $this->pikachuMultiplier;
-	}
-
-	public function getPikachuResistanceType() {
-		return $this->pikachuResistanceType;
-	}
-
-	public function getPikachuResistanceValue() {
-		return $this->pikachuResistanceValue;
-	}
-
-	public function getPikachuNameAttackER() {
-		return $this->pikachuNameAttackER;
-	}
-
-	public function getPikachuNameAttackPP() {
-		return $this->pikachuNameAttackPP;
-	}
-
-	public function getPikachuDamageER() {
-		return $this->pikachuDamageAttackER;
-	}
-
-	public function getPikachuDamagePP() {
-		return $this->pikachuDamageAttackPP;
-	}
-
-
-
-
-
-	//Charmeleon//
-	public function getCharmeleonName() {
-		return $this->charmeleonName;
-	}
-
-	public function getCharmeleonType() {
-		return $this->charmeleonType;
-	}
-
-	public function getCharmeleonHitpoints() {
-		return $this->charmeleonHitpoints;
-	}
-
-	public function getCharmeleonHealth() {
-		return $this->charmeleonHitpoints;
-	}
-
-	public function getCharmeleonWeakness() {
-		return $this->charmeleonWeaknessType;
-	}
-
-	public function getCharmeleonMultiplier() {
-		return $this->charmeleonMultiplier;
-	}
-
-	public function getCharmeleonResistanceType() {
-		return $this->charmeleonResistanceType;
-	}
-
-	public function getCharmeleonResistanceValue() {
-		return $this->charmeleonResistanceValue;
-	}
-
-	public function getCharmeleonNameAttackHB() {
-		return $this->charmeleonNameAttackHB;
-	}
-
-	public function getCharmeleonNameAttackF() {
-		return $this->charmeleonNameAttackF;
-	}
-
-	public function getCharmeleonDamageHB() {
-		return $this->charmeleonDamageAttackHB;
-	}
-
-	public function getCharmeleonDamageF() {
-		return $this->charmeleonDamageAttackF;
-	}
+    public function doAttack($target, $attack)
+    {
+        echo $this->name . " do " . $attack->name . "<br>";
+        $damage = $attack->damage;
+        if ($this->type->name == $target->weakness->type) {
+            $damage = $attack->damage * $target->weakness->multiplier;
+            echo "It's very effective!<br>";
+        }elseif($this->type->name == $target->resistance->type) {
+            $damage = $attack->damage / $target->resistance->value;
+            echo "It isn't very effective!<br>";
+        }
+        $health = $target->health - $damage;
+        echo "HP after attack " . $health . "<br><br>";
+    }
 }

@@ -1,11 +1,12 @@
 <?php
 
-class Weakness extends Pokemon {
+class Weakness {
 
-	protected $pikachuWeaknessType = "Fire";
-	protected $pikachuMultiplier = 1.5;
-
-	protected $charmeleonWeaknessType = "Water";
-	protected $charmeleonMultiplier = 2;
-
+    public $type;
+    public $multiplier;
+    
+    public function __construct($type, $multiplier){
+        $this->type = $type;
+        $this->multiplier = $multiplier;
+    }
 }

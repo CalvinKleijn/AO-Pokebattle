@@ -1,8 +1,10 @@
 <?php
 
-class EnergyType extends Pokemon {
+class EnergyType {
 
-	protected $pikachuType = 'Lightning';
-	protected $charmeleonType = 'Fire';
-	
+    public $name;
+    
+    public function __construct($name){
+        $this->name = $name;
+    }
 }
