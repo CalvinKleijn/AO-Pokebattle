@@ -2,13 +2,13 @@
 
 class Pokemon {
 
-	protected $name;
-	protected $type;
-	protected $health;
-    protected $hitpoints;
+	private $name;
+	private $type;
+	private $health;
+    private $hitpoints;
 	public $attacks;
-    protected $resistance;
-    protected $weakness;
+    private $resistance;
+    private $weakness;
 
 	public function __construct($name, $type, $health, $hitpoints, $attacks, $resistance, $weakness)
     {
@@ -38,16 +38,19 @@ class Pokemon {
 
     public function doAttack($target, $attack)
     {
-        echo $this->name . " do " . $attack->name . "<br>";
+        $response = "";
+        $response .= $this->name . " do " . $attack->name . "<br>";
         $damage = $attack->damage;
         if ($this->type->name == $target->weakness->type) {
             $damage = $attack->damage * $target->weakness->multiplier;
-            echo "It's very effective!<br>";
+            $response .= "It's very effective!<br>";
         }elseif($this->type->name == $target->resistance->type) {
             $damage = $attack->damage / $target->resistance->value;
-            echo "It isn't very effective!<br>";
+            $response .= "It isn't very effective!<br>";
         }
-        $health = $target->health - $damage;
-        echo "HP after attack " . $health . "<br><br>";
+        $target->health = $target->health - $damage;
+        //$health = $target->health - $damage;
+        $response .= "HP after attack " . $target->health . "<br><br>";
+        return $response;
     }
 }
